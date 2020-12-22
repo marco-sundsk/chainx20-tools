@@ -1,0 +1,21 @@
+{
+  "validators": {
+    "5Qhgdc7UcEJUJ7BN851ykMPyV4TEgc4FcSLFwxheSXiny9UF": {
+      "name": "Doge",
+      "email_to": ["a@foxmail.com", "b@foxmail.com"]
+    },
+	  "5TUkY4VZ3fgs3AipkKtEhLaR8gao7bdKSG68nK7wSSGWt6NN": {
+      "name": "MXCPOSPOOL",
+      "email_to": []
+    }
+  },
+  "email": {
+    "enable": false,
+    "host": "smtp.exmail.qq.com",
+    "port": 465,
+    "ssl": true,
+    "uid": "xxx@qq.com",
+    "pwd": "your_email_password",
+    "from": "xxx@qq.com"
+  }
+}
