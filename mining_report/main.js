@@ -9,7 +9,7 @@ const { WsProvider } = require("@polkadot/rpc-provider");
 const { options } = require("@chainx-v2/api");
 
 async function main() {
-    console.log(curTime(), 'Mining report for ChainX20. Version: 0.9.0');
+    console.log(curTime(), 'Mining report for ChainX20. Version: 0.9.1');
     console.log('Env is:');
     console.log('chainx_ws_addr:', process.env.chainx_ws_addr);
     console.log('Cfg is:');
@@ -25,10 +25,13 @@ async function main() {
     const lastHeader = await api.rpc.chain.getHeader();
     console.log(curTime(), `last block #${lastHeader.number}`);
 
+    // get X-BTC to be claimed: xmining.toJSON()['1']['other']*10
     const xmining = await api.rpc.xminingasset.getDividendByAccount(account);
     // console.log(xmining.toJSON());
-    let xbtc_profit = parseInt(xmining.toJSON()['1']['other']);
-    console.log(curTime(), '0.01 xbtc_profit:', xbtc_profit*10);
+    let xbtc_profit = parseInt(xmining.toJSON()['1']['own']);
+    console.log(curTime(), '0.01 xbtc_profit:', xbtc_profit);
+
+    // get PCX staking to be claimed: 
     const staking = await api.rpc.xstaking.getDividendByAccount(account);
     // console.log(staking.toJSON());
     const stakingObj = staking.toJSON();
