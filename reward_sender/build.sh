@@ -1,3 +1,3 @@
 #!/bin/bash
 yarn install
-cp main.js reward_sender.js
+cp main.js do_reward_sender.js
