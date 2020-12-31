@@ -56,11 +56,9 @@ async function main() {
     console.log(curTime(), 'Reward sender for ChainX20. Version: 0.9.0');
     console.log('Env is:');
     console.log('chainx_ws_addr:', process.env.chainx_ws_addr);
-    console.log('Cfg is:');
-    console.log('ref account:', cfg.account);
+    // console.log('Cfg is:');
+    // console.log('ref account:', cfg.account);
     console.log('');
-
-    const account = cfg.account;
 
     const wsProvider = new WsProvider(process.env.chainx_ws_addr);
     const api = await ApiPromise.create(options({ provider: wsProvider }));

@@ -3,6 +3,7 @@
 .env
 config.json
 try_*
+do_*
 yarn.lock
 *.bak
 
