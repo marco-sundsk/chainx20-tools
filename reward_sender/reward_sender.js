@@ -19,7 +19,7 @@ const receivers = [
 var index = 0;
 
 async function dispatch(api, sender) {
-  if (index > receivers.length) {
+  if (index >= receivers.length) {
     process.exit(0);
   } else {
     await transfer(api, sender, receivers[index]['addr'], 
