@@ -15,7 +15,7 @@ const BUILDLINKS = '5Pjajd12o9hVixBPRPHZEdjsrct3NZp9Ge7QP4PiSivQrBZa';
 var reserve_pcx = parseInt(5 * cfg.units.PCX_FEE + 9999 * cfg.units.PCX);
 var min_vote = 9999 * cfg.units.PCX; // 业务定义的最小投票金额，用户余额扣除reserve后要超过此值才发起投票
 var min_claim = 9999 * cfg.units.PCX; // 业务定义的最小提息金额
-var accname;
+var accName;
 var sender;
 var accaddr;
 
