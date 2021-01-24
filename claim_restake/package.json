@@ -6,6 +6,8 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "@chainx-v2/api": "^0.0.49",
-    "@polkadot/api": "^2.9.1"
+    "@polkadot/api": "^2.9.1",
+    "@polkadot/util": "^2.9.1",
+    "@polkadot/util-crypto": "^2.9.1"
   }
 }
