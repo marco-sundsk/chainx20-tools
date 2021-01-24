@@ -172,7 +172,7 @@ async function main() {
     await dispatch(api, {"prev_action": "init", "prev_success": true});
   } catch (err) {
     console.log(curTime(), err);
-    await dispatch(api, {"prev_action": "init", "prev_success": false});
+    await dispatch(null, {"prev_action": "init", "prev_success": false});
   }
 }
 
