@@ -164,7 +164,7 @@ async function main() {
     console.log();
 
     const keyring = new Keyring({ type: 'ed25519', ss58Format: 44 });
-    sender = keyring.addFromUri(cfg.accouts[accName]);
+    sender = keyring.addFromUri(cfg.accounts[accName]);
     accaddr = sender.address;
     console.log('Sender Addr is:', accaddr);
     // console.log(`Sender address ${sender.address} with publicKey [${u8aToHex(sender.publicKey)}]`);
