@@ -10,9 +10,12 @@ function main() {
     let problems = [];
     const keyring = new Keyring({ type: 'sr25519' });
     for (let i=0;i<cfg.receivers.length;i++) {
-        // console.log("Verify target Addr: " + cfg.receivers[i]['addr']);
         process.stdout.write("Verify target Addr[" + i + "]: " + cfg.receivers[i]['addr']);
+
         try {
+            if (!cfg.receivers[i]['addr'].startsWith("5")) {
+                throw "Illegal Addr"
+            }
             let pk = keyring.decodeAddress(cfg.receivers[i]['addr']);
             console.log("...OK.");
         } catch(err) {
@@ -29,7 +32,7 @@ function main() {
         }
     }
 
-    console.log('Verify addrs, End.');
+    console.log('Verify addrs, End: Legal count:' + (cfg.receivers.length - problems.length));
 }
 
 main();
