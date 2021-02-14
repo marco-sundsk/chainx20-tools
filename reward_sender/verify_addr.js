@@ -10,7 +10,7 @@ function main() {
     let problems = [];
     const keyring = new Keyring({ type: 'sr25519' });
     for (let i=0;i<cfg.receivers.length;i++) {
-        process.stdout.write("Verify target Addr[" + i + "]: " + cfg.receivers[i]['addr']);
+        process.stdout.write("Verify target Addr[" + (i+1) + "]: " + cfg.receivers[i]['addr']);
 
         try {
             if (!cfg.receivers[i]['addr'].startsWith("5")) {
