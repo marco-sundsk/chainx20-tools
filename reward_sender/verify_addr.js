@@ -8,6 +8,7 @@ function main() {
     console.log('');
 
     let problems = [];
+    let total_amount = 0;
     const keyring = new Keyring({ type: 'sr25519' });
     for (let i=0;i<cfg.receivers.length;i++) {
         process.stdout.write("Verify target Addr[" + (i+1) + "]: " + cfg.receivers[i]['addr']);
@@ -17,6 +18,7 @@ function main() {
                 throw "Illegal Addr"
             }
             let pk = keyring.decodeAddress(cfg.receivers[i]['addr']);
+            total_amount += cfg.receivers[i]['amount'];
             console.log("...OK.");
         } catch(err) {
             console.log("...Failed!");
@@ -33,6 +35,7 @@ function main() {
     }
 
     console.log('Verify addrs, End: Legal count:' + (cfg.receivers.length - problems.length));
+    console.log('Total amount is:', total_amount/10**8);
 }
 
 main();

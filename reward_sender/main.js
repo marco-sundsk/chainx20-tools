@@ -73,8 +73,18 @@ async function main() {
     const sender = keyring.addFromUri(cfg.phrase);
     console.log(`Sender address ${sender.address} with publicKey [${sender.publicKey}]`);
 
+    let {
+      data: balance,
+      nonce: previousNonce,
+    } = await api.query.system.account(sender.address);
+    console.log(JSON.stringify(balance));
+    let free = parseInt(balance.free) - parseInt(balance.miscFrozen);
+    console.log('[get_balance]free_balance:', free/10**8);
+    console.log('!!!!Check the balance if it meets requirement, And then uncomment transfer line.');
+
+
     // start transfer
-    await dispatch(api, sender);
+    // await dispatch(api, sender);
 }
 
 main().catch((error) => {
